@@ -1,6 +1,6 @@
 from celery import Celery
 
-from storetask import StoreTask
+# from storetask import StoreTask
 
 
 app = Celery('tasks')
@@ -17,7 +17,7 @@ def test_task(name):
     return f'It`s {name}'
 
 
-@app.task
-def get_similars(request):
-    result = StoreTask().similar(request)
-    return result
+# @app.task
+# def get_similars(request):
+#     result = StoreTask().similar(request)
+#     return result

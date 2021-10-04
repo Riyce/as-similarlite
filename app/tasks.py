@@ -17,7 +17,7 @@ def test_task(name):
     return f'It`s {name}'
 
 
-@app.task(serializer='pickle')
-def get_similars(request):
-    result = StoreTask().similar(request)
+@app.task
+def get_similars(**kwargs):
+    result = StoreTask().similar(**kwargs)
     return result

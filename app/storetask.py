@@ -3,8 +3,8 @@ from models import ExtractResponse
 
 
 class StoreTask:
-    def similar(self, request):
+    def similar(self, id, country, clp):
         apps = LightParser().extract(
-            request.similar_clp, 'en_US', request.country
+            clp, 'en_US', country
         )
-        return ExtractResponse(request.id, apps)
+        return apps

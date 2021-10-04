@@ -25,5 +25,5 @@ broker_url = "sqs://{aws_access_key}:{aws_secret_key}@".format(
 result_backend = 'rpc://'
 task_serializer = 'pickle'
 result_serializer = 'pickle'
-accept_contetn = ['pickle', 'json']
+accept_content = ['pickle', 'json']
 enable_utc = True

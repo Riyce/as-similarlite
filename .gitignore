@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 user-data.sh
+test2.py
+test.py

@@ -18,6 +18,6 @@ def test_task(name):
 
 
 @app.task
-def get_similars(**kwargs):
-    result = StoreTask().similar(**kwargs)
+def get_similars(requsest):
+    result = StoreTask().similar(requsest)
     return result

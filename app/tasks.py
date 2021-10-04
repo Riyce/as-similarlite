@@ -17,7 +17,7 @@ def test_task(name):
     return f'It`s {name}'
 
 
-# @app.task
-# def get_similars(requsest):
-#     result = StoreTask().similar(requsest)
-#     return result
+@app.task
+def get_similars(request):
+    result = StoreTask().similar(request)
+    return result

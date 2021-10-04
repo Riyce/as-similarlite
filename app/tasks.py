@@ -19,6 +19,6 @@ def test_task(name):
 
 
 @app.task
-def get_similars(request: ExtractRequest) -> ExtractResponse:
+def get_similars(request) -> ExtractResponse:
     result = StoreTask().similar(request)
     return result

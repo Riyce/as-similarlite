@@ -1,9 +1,9 @@
 from lightparser import LightParser
-from models import ExtractResponse, ExtractRequest
+from models import ExtractResponse
 
 
 class StoreTask:
-    def similar(self, request: ExtractRequest) -> ExtractResponse:
+    def similar(self, request):
         apps = LightParser().extract(
             request.similar_clp, 'en_US', request.country
         )

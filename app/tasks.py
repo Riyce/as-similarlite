@@ -1,5 +1,6 @@
 from celery import Celery
 
+from models import ExtractResponse, ExtractRequest
 from storetask import StoreTask
 
 
@@ -18,6 +19,6 @@ def test_task(name):
 
 
 @app.task
-def get_similars(id, country, clp):
-    result = StoreTask().similar(id, country, clp)
+def get_similars(request: ExtractRequest) -> ExtractResponse:
+    result = StoreTask().similar(request)
     return result

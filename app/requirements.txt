@@ -1,2 +1,2 @@
-celery[sqs]
+celery[sqs]==4.4
 python-dotenv

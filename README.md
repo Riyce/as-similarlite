@@ -7,7 +7,7 @@ echo RESULT_BACKEND=... >> .env
 Celery
 ======
 
-sudo cp -R /home/similar/similar/celery-aws.service /etc/systemd/system/celery_similar.service
+sudo cp -R /home/ubuntu/celery/as-similarlite/celery-aws.service /etc/systemd/system/celery_similar.service
 sudo systemctl daemon-reload
 sudo systemctl start celery_similar
 sudo systemctl status celery_similar
@@ -15,5 +15,5 @@ sudo systemctl stop celery_similar
 sudo systemctl restart celery_similar
 
 # AWS
-sudo cp -R /home/similar/similar/celery-aws.service /etc/systemd/system/celery_similar.service
-tail -f /home/similar/similar/data/logs/celery-*.log
+sudo cp -R /home/ubuntu/celery/as-similarlite/celery-aws.service /etc/systemd/system/celery_similar.service
+tail -f /home/ubuntu/celery/data/logs/celery-*.log

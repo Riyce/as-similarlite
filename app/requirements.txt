@@ -1,2 +1,2 @@
-celery[sqs,amqp]
+celery[sqs]
 python-dotenv

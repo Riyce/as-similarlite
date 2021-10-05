@@ -7,6 +7,8 @@ from storetask import StoreTask
 app = Celery('tasks')
 app.config_from_object('celeryconfig')
 
+# for f, v in app.conf.items():
+#     print(f, v)
 
 @app.task
 def add(x, y):

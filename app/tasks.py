@@ -1,4 +1,4 @@
-from celery import Celery
+from celery import Celery, shared_task
 
 from models import ExtractResponse, ExtractRequest
 from storetask import StoreTask
@@ -7,20 +7,11 @@ from storetask import StoreTask
 app = Celery('tasks')
 app.config_from_object('celeryconfig')
 
-# for f, v in app.conf.items():
-#     print(f, v)
 
-@app.task
-def add(x, y):
-    return x + y
-
-
-@app.task
-def test_task(name):
-    return f'It`s {name}'
-
-
-@app.task
-def get_similars(request) -> ExtractResponse:
+@shared_task(
+    bind=True,
+    name='ps.similar'
+)
+def get_similars(request: ExtractRequest) -> ExtractResponse:
     result = StoreTask().similar(request)
     return result

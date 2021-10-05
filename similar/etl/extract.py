@@ -1,8 +1,8 @@
-from lightparser import LightParser
-from models import ExtractResponse, ExtractRequest
+from similar.etl.models import ExtractResponse, ExtractRequest
+from similar.etl.parser.lightparser import LightParser
 
 
-class StoreTask:
+class PlaySimilarEtl:
     def similar(self, request: ExtractRequest) -> ExtractResponse:
         apps = LightParser().extract(
             request.similar_clp, 'en_US', request.country

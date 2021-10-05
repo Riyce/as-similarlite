@@ -17,5 +17,7 @@ class LightParser:
         )
         with urllib.request.urlopen(url) as f:
             data = f.read().decode('utf-8')
-            apps = re.findall(r'/store/apps/details\?id=([.\w]+)"><div', data)
+            apps = re.findall(
+                r'/store/apps/details\?id=([.\w]+)"><div', data
+            )
             return apps

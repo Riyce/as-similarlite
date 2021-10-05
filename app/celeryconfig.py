@@ -19,9 +19,9 @@ CELERY_BROKER_TRANSPORT_OPTIONS = {
 aws_access_key = safequote(os.getenv('AWS_ACCESS_KEY_ID'))
 aws_secret_key = safequote(os.getenv('AWS_SECRET_ACCESS_KEY'))
 
-broker_url = os.getenv('BROKER_URL')
-# "sqs://{aws_access_key}:{aws_secret_key}@".format(
-#     aws_access_key=aws_access_key, aws_secret_key=aws_secret_key,
-# )
+# broker_url = os.getenv('BROKER_URL')
+broker_url = "sqs://{aws_access_key}:{aws_secret_key}@".format(
+    aws_access_key=aws_access_key, aws_secret_key=aws_secret_key,
+)
 result_backend = 'rpc://'
 enable_utc = True

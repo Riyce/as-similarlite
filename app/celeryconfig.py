@@ -25,3 +25,4 @@ broker_url = "sqs://{aws_access_key}:{aws_secret_key}@".format(
 )
 result_backend = 'rpc://'
 enable_utc = True
+accept_content = ['json', 'pickle']

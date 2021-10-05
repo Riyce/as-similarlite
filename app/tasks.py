@@ -18,7 +18,7 @@ def test_task(name):
     return f'It`s {name}'
 
 
-@app.task
+@app.task(serializer='pickle')
 def get_similars(request) -> ExtractResponse:
     result = StoreTask().similar(request)
     return result

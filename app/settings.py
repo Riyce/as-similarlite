@@ -13,6 +13,12 @@ CELERY_CONF = dict(
     accept_content=['json', 'pickle'],
     broker_url=BROKER_URL,
     result_backend=RESULT_BACKEND,
-    task_routes={'ps.similar': {'queue': 'ps_similar'}},
+    task_routes={
+        'ps.start': {'queue': 'ps_control'},
+        'ps.complete': {'queue': 'ps_control'},
+        'ps.similar': {'queue': 'ps_similar'},
+        'ps.extract': {'queue': 'ps_extract'},
+        'ps.*': {'queue': 'ps'},
+    },
     enable_utc=True
 )

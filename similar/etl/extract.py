@@ -1,4 +1,4 @@
-from similar.etl.models import ExtractResponse, ExtractRequest
+from similar.etl.models import ExtractRequest, ExtractResponse
 from similar.etl.parser.lightparser import LightParser
 
 

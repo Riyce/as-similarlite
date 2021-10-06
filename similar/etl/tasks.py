@@ -1,7 +1,7 @@
 from celery import shared_task
 
-from similar.etl.models import ExtractResponse, ExtractRequest
 from similar.etl.extract import PlaySimilarEtl
+from similar.etl.models import ExtractRequest, ExtractResponse
 
 
 @shared_task(

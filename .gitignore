@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 user-data.sh
 pypath.txt
+.vscode/

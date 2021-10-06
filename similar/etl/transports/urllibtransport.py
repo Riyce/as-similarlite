@@ -1,10 +1,7 @@
-import logging
 import urllib.request
 import urllib.error
 
 from transports.exceptions import NotFound
-
-logger = logging.getLogger('transport')
 
 
 class UrllibTransport:
@@ -25,11 +22,10 @@ class UrllibTransport:
                         return return_notfound
                     else:
                         raise NotFound()
-                logger.error('HTTPError: {}'.format(e.code), exc_info=e)
                 # raise e
             # except http.client.IncompleteRead as e:
             except OSError as e:
-                logger.error('OSError', exc_info=e)
+                pass
                 # raise e
 
             repeats -= 1

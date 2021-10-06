@@ -1,7 +1,7 @@
 import urllib.request
 import urllib.error
 
-from transports.exceptions import NotFound
+from similar.etl.transports.exceptions import NotFound
 
 
 class UrllibTransport:
